@@ -13,11 +13,11 @@ Código
 
 O código fornecido demonstra o processo de inferência de um Perceptron (como ele faz uma previsão), não o seu treinamento. No entanto, podemos identificar as etapas fundamentais de como um Perceptron processa a informação:
 
-1. "Cálculo da Soma Ponderada:" A função `perceptron_input` realiza a primeira etapa. Ela multiplica cada valor de entrada (`inputs`) pelo seu peso correspondente (`weights`) e soma todos esses produtos. No código, isso é feito de forma eficiente com a expressão `sum(i * w for i, w in zip(inputs, weights))`.
-2. "Adição do Bias:" Ao resultado da soma ponderada, o valor do `bias` é adicionado. O bias ajuda a ajustar a fronteira de decisão, tornando o modelo mais flexível.
-3. "Aplicação da Função de Ativação:" A função `perceptron_output` aplica uma regra de decisão, conhecida como função de ativação (neste caso, uma função degrau ou *step function*). Ela verifica se a soma ponderada mais o bias é maior ou igual a zero. Se for, a saída é `1`; caso contrário, a saída é `0`.
+1. "Cálculo da Soma Ponderada:" A função perceptron_input realiza a primeira etapa. Ela multiplica cada valor de entrada (inputs) pelo seu peso correspondente (weights) e soma todos esses produtos. No código, isso é feito de forma eficiente com a expressão sum(i * w for i, w in zip(inputs, weights)).
+2. "Adição do Bias:" Ao resultado da soma ponderada, o valor do bias é adicionado. O bias ajuda a ajustar a fronteira de decisão, tornando o modelo mais flexível.
+3. "Aplicação da Função de Ativação:" A função perceptron_output aplica uma regra de decisão, conhecida como função de ativação (neste caso, uma função degrau ou step function). Ela verifica se a soma ponderada mais o bias é maior ou igual a zero. Se for, a saída é 1; caso contrário, a saída é 0.
 
-O processo de treinamento, que não está no código, envolveria um laço de repetição onde o modelo faria previsões para dados de treino e, com base no erro entre a previsão e o resultado esperado, ajustaria os valores dos `weights` e do `bias` para minimizar esse erro.
+O processo de treinamento, que não está no código, envolveria um laço de repetição onde o modelo faria previsões para dados de treino e, com base no erro entre a previsão e o resultado esperado, ajustaria os valores dos weights e do bias para minimizar esse erro.
 Aplicação Prática
 
 "Dê um exemplo real em que o uso de um modelo simples como o Perceptron poderia ser útil. Justifique sua escolha."
