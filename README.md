@@ -9,17 +9,17 @@ Funcionamento
 Dizer que o Perceptron é um "classificador linear" significa que ele só consegue separar dados que são "linearmente separáveis". Em um gráfico de duas dimensões, isso quer dizer que ele só funciona se for possível traçar uma única linha reta para dividir perfeitamente os dois grupos de dados que se deseja classificar (por exemplo, "aprovado" e "reprovado"). Em um espaço com mais dimensões, essa "linha" se torna um plano ou um hiperplano. O Perceptron cria essa fronteira de decisão linear. A principal limitação do Perceptron é que ele é incapaz de resolver problemas onde os dados não são linearmente separáveis. O exemplo clássico é a função lógica "XOR (OU Exclusivo)", onde é impossível traçar uma única linha reta para separar corretamente todas as saídas. Como a maioria dos problemas do mundo real envolve relações complexas e não-lineares entre os dados, um Perceptron de camada única é muito limitado para aplicações práticas.
 
 Código
-"Ao analisar o código que você executou, quais foram as etapas principais do processo de treinamento do Perceptron?"
+"Ao analisar o código que você executou, quais foram as etapas principais do processo do Perceptron?"
 
-O código fornecido demonstra o processo de inferência de um Perceptron (como ele faz uma previsão), não o seu treinamento. No entanto, podemos identificar as etapas fundamentais de como um Perceptron processa a informação:
+O código executado demonstra o processo de inferência de um Perceptron (como ele faz uma previsão), não o seu treinamento. As etapas fundamentais de como o Perceptron processa a informação no código são:
 
-1. "Cálculo da Soma Ponderada:" A função perceptron_input realiza a primeira etapa. Ela multiplica cada valor de entrada (inputs) pelo seu peso correspondente (weights) e soma todos esses produtos. No código, isso é feito de forma eficiente com a expressão sum(i * w for i, w in zip(inputs, weights)).
-2. "Adição do Bias:" Ao resultado da soma ponderada, o valor do bias é adicionado. O bias ajuda a ajustar a fronteira de decisão, tornando o modelo mais flexível.
-3. "Aplicação da Função de Ativação:" A função perceptron_output aplica uma regra de decisão, conhecida como função de ativação (neste caso, uma função degrau ou step function). Ela verifica se a soma ponderada mais o bias é maior ou igual a zero. Se for, a saída é 1; caso contrário, a saída é 0.
+1. Cálculo da Soma Ponderada: Primeiro, o código multiplica cada valor de entrada (input1, input2) pelo seu peso correspondente (peso1, peso2). Em seguida, soma esses produtos. O resultado é armazenado na variável soma_ponderada.
+2. Adição do Bias: O valor do bias (viés) é somado ao resultado da soma_ponderada. Isso gera um valor final, armazenado na variável soma_total, que serve como a entrada para a etapa de decisão.
+3. Aplicação da Função de Ativação: Por último, o código usa uma estrutura if/else que funciona como uma função de ativação. Ele verifica se a soma_total é maior ou igual a zero. Se a condição for verdadeira, a saída do Perceptron é 1; caso contrário, a saída é 0.
 
 O processo de treinamento, que não está no código, envolveria um laço de repetição onde o modelo faria previsões para dados de treino e, com base no erro entre a previsão e o resultado esperado, ajustaria os valores dos weights e do bias para minimizar esse erro.
-Aplicação Prática
 
+Aplicação Prática
 "Dê um exemplo real em que o uso de um modelo simples como o Perceptron poderia ser útil. Justifique sua escolha."
 
 Um exemplo prático e útil para um Perceptron seria um sistema automatizado de triagem de e-mails para identificar spam
